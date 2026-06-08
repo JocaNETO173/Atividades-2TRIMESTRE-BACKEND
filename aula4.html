@@ -11,17 +11,32 @@ ou "DESLIGADA" de acordo com o estado do objeto.
 -->
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<title>4A - Fazer Junto: Lâmpada</title>
+    <meta charset="UTF-8">
+    <title>4A - Fazer Junto: Lâmpada</title>
 </head>
+
 <body>
-<h2>Exemplo 4A: Lâmpada O.O.</h2>
-<p>A lâmpada está: <strong id="txtLampada">DESLIGADA</strong></p>
-<button onclick="alternarLampada()">Interruptor</button>
+    <h2>Exemplo 4A: Lâmpada O.O.</h2>
+    <p>A lâmpada está: <strong id="txtLampada">DESLIGADA</strong></p>
+    <button onclick="alternarLampada()">Interruptor</button>
 
-<script>
+    <script>
+        const lampada = {
+            ligada: false,
+            alternar: function () {
+                this.ligada = !this.ligada;
+            }
+        }
 
-</script>
+        function alternarLampada() {
+            lampada.alternar();
+            document.getElementById('txtLampada').innerText = lampada.ligada ? "LIGADA" : "DESLIGADA"
+        }
+
+        
+    </script>
 </body>
+
 </html>
