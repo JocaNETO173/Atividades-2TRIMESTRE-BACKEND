@@ -20,6 +20,8 @@ valor e o envia para dentro do método, que soma o dinheiro ao saldo atual da co
     
     <input type="number" id="valDeposito" placeholder="Digite o valor">
     <button onclick="executarDeposito()">Depositar</button>
+    <p id="txtDep">Total Depósito: </p>
+    <p id="txt"></p>
 
     <script>
         const conta = {
@@ -33,10 +35,14 @@ valor e o envia para dentro do método, que soma o dinheiro ao saldo atual da co
         document.getElementById('valDeposito').addEventListener('input', ()=>{
             valorDeposito = Number(document.getElementById('valDeposito').value)
         })
+        total = 0;
         
         function executarDeposito(){
             conta.depositar(valorDeposito);
+            total += valorDeposito;
             document.getElementById('txtSaldo').innerHTML = conta.saldo;
+            document.getElementById('txt').innerHTML += `Foi depositado R$${valorDeposito}!<br>`;
+            document.getElementById('txtDep').innerHTML = `Total Depósito: R$${total.toFixed(2)}`;
         }
     </script>
 </body>
