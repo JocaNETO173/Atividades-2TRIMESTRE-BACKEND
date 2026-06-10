@@ -6,10 +6,12 @@ do seu objeto.
 -->
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <title>5B - Exercício: Combustível</title>
 </head>
+
 <body>
     <h2>Exercício 5B: Tanque de Combustível</h2>
     <p>Gasolina no Tanque: <span id="txtGasolina">20</span> Litros</p>
@@ -18,7 +20,23 @@ do seu objeto.
     <button onclick="executarAbastecimento()">Abastecer</button>
 
     <script>
-       
+        const carro = {
+            combustivel: 20,
+            adicionarGasolina: function (litros) {
+                this.combustivel += litros;
+            }
+        }
+
+        
+
+
+        function executarAbastecimento() {
+            let inputLitros = Number(document.getElementById('valGasolina').value);
+            carro.adicionarGasolina(inputLitros);
+            document.getElementById('txtGasolina').innerHTML = carro.combustivel;
+        }
+
     </script>
 </body>
+
 </html>
