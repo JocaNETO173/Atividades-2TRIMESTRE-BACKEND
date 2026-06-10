@@ -10,10 +10,12 @@ mensagem de erro ("Saldo insuficiente").
 -->
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <title>6A - Fazer Junto: Saque</title>
 </head>
+
 <body>
     <h2>Exemplo 6A: Conta Bancária (Saque com Validação)</h2>
     <p>Saldo Disponível: R$ <span id="txtSaldoCaixa">80</span></p>
@@ -23,7 +25,22 @@ mensagem de erro ("Saldo insuficiente").
     <p id="msgErro" style="color: red;"></p>
 
     <script>
-       
+        const contaBancaria = {
+            saldo: 80,
+            sacar: function (saque) {
+                if(saque <= this.saldo){
+                    this.saldo -= saque;
+                    return "saque realizado!"
+                }
+                
+            }
+        }
+
+        function executarSaque() {
+
+            contaBancaria.sacar(inputSaque)
+        }
     </script>
 </body>
+
 </html>
