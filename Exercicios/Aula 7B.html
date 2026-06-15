@@ -19,7 +19,20 @@ inputs do usuário, jogue para dentro do objeto e exiba o resultado na tela.
     <p id="txtCracha" style="font-weight: bold; color: darkblue;"></p>
 
     <script>
-        
+        const funcionario = {
+            nome: '',
+            setor: '',
+
+            gerarCracha: function(){
+                return `CRACHÁ: ${this.nome} - DEPT: ${this.setor}`;
+            }
+        }
+
+        function criarCracha(){
+            funcionario.nome = document.getElementById('nomeFunc').value;
+            funcionario.setor = document.getElementById('setorFunc').value;
+            document.getElementById('txtCracha').innerHTML = funcionario.gerarCracha();
+        }
     </script>
 </body>
 </html>
