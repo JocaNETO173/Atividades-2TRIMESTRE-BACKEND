@@ -35,10 +35,11 @@ mensagem de erro ("Saldo insuficiente").
                 
             }
         }
-
+        
         function executarSaque() {
-
+            inputSaque = document.getElementById('valSaque').value
             contaBancaria.sacar(inputSaque)
+            document.getElementById('txtSaldoCaixa').innerText = contaBancaria.saldo
         }
     </script>
 </body>
