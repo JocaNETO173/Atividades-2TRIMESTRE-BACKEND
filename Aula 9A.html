@@ -10,10 +10,12 @@ Ele possui a propriedade quantidade controlada por dois botões distintos no HTM
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <title>9A - Fazer Junto: Carrinho</title>
 </head>
+
 <body>
     <h2>Exemplo 9A: Item Único no Carrinho</h2>
     <p>Quantidade de Camisetas: <strong id="qtdCamiseta">0</strong></p>
@@ -21,16 +23,31 @@ Ele possui a propriedade quantidade controlada por dois botões distintos no HTM
     <button onclick="removerCamiseta()">-</button>
 
     <script>
-       const item = {
-        quantidade: 0,
-        adicionar: function(){
-            this.quantidade += 1;
-        },
-        remover: function(){
-            this.quantidade -= 1;
-        },
+        const item = {
+            quantidade: 0,
+            adicionar: function () {
+                this.quantidade++;
+            },
+            remover: function () {
+                if (this.quantidade - 1 >= 0) {
+                    this.quantidade--;
+                } else {
+                    this.quantidade = 0;
+                }
 
-       }
+            },
+
+        }
+
+        function adicionarCamiseta(){
+            item.adicionar();
+            document.getElementById('qtdCamiseta').innerText = item.quantidade;
+        }
+        function removerCamiseta(){
+            item.remover();
+            document.getElementById('qtdCamiseta').innerText = item.quantidade;
+        }
     </script>
 </body>
+
 </html>
