@@ -11,10 +11,12 @@ para aproveitar o cálculo pronto do método vizinho.
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <title>10A - Fazer Junto: Notas</title>
 </head>
+
 <body>
     <h2>Exemplo 10A: Boletim Escolar O.O.</h2>
     <p>Nota 1: 8.0 | Nota 2: 5.0</p>
@@ -22,7 +24,18 @@ para aproveitar o cálculo pronto do método vizinho.
     <p id="txtResultado">Status: ---</p>
 
     <script>
-        
+        const boletim = {
+            n1: 8.0,
+            n2: 5.0,
+            calcularMedia: function () { return (this.n1 + this.n2) / 2; },
+            obterSituacao: function () { if (this.calcularMedia() >= 6.0) { return 'Aprovado'; } else { return 'Reprovado'; }; }
+        }
+
+        function verificarBoletim() {
+            document.getElementById('txtResultado').innerText = `Média: ${boletim.calcularMedia()}\nStatus: ${boletim.obterSituacao()}`
+        }
+
     </script>
 </body>
+
 </html>
