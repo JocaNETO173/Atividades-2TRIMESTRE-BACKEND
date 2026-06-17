@@ -21,7 +21,16 @@ Ele possui a propriedade quantidade controlada por dois botões distintos no HTM
     <button onclick="removerCamiseta()">-</button>
 
     <script>
-       
+       const item = {
+        quantidade: 0,
+        adicionar: function(){
+            this.quantidade += 1;
+        },
+        remover: function(){
+            this.quantidade -= 1;
+        },
+
+       }
     </script>
 </body>
 </html>
