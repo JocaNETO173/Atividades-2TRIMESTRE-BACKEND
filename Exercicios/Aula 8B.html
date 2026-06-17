@@ -8,10 +8,12 @@ avisando que está no máximo.
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <title>8B - Exercício: Volume</title>
 </head>
+
 <body>
     <h2>Exercício 8B: Controle de Volume Caixa Amplificada</h2>
     <p>Volume: <span id="txtVol">0</span></p>
@@ -19,7 +21,27 @@ avisando que está no máximo.
     <p id="msgVol" style="color: red;"></p>
 
     <script>
-       
+        const som = {
+            volumeAtual: 0,
+            volumeMaximo: 10,
+            aumentarVolume: function () {
+                if (this.volumeAtual + 2 >= this.volumeMaximo) {
+                    this.volumeAtual = 10;
+                    return 'O volume está no máximo! (Máximo: 10)'
+                } else {
+                    this.volumeAtual += 2;
+                    return ''
+                }
+
+            }
+        }
+
+        function maisSom(){
+            document.getElementById('msgVol').innerText = som.aumentarVolume();
+            document.getElementById('txtVol').innerText = som.volumeAtual;
+            
+        }
     </script>
 </body>
+
 </html>
